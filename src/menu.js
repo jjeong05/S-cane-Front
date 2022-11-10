@@ -1,44 +1,105 @@
-import React, {useEffect} from "react";
+/* eslint-disable no-cond-assign */
+import React, { useEffect } from "react";
 
-function Menu(props){
-    let mode = 'setting-pin';
+function Menu(){
+    
+    let mode = 'notification';
     let code ='';
     const pins =[
         {title:'GSM'},
-        {title:'A'}
+        {title:'A'},
+        {title:'B'}
     ]
-    const pin_list = () =>{
+
+    let name = '지다민';
+
+    const pin_list = ()=>{
         const result = [];
-        for(let i = 0 ; pins.length < i++ ; i++){
-            result.push(<div key={i}>
+        for(let i = 0 ; i<pins.length ; i++){
+            result.push(
+            <div key={i}>
                {pins[i].title} 
-            </div>)
-        console.log(pins[i].title);    
-        
+            </div>
+            );  
         }
-        
-        return result
+        return result;
     };
 
-    // eslint-disable-next-line no-cond-assign
+    
+    let notices =[
+        {time: '00:00:00', msg:'‘지다민’이(가) 위험 지정 구역 A에 접근했습니다.'},
+        {time: '11:11:11', msg:'‘지다민’의 지팡이가 떨어졌습니다.', case: 'fall'},
+    ]
+    
+    const notice_list= ()=>{
+        const result=[];
+        for(let i = 0 ; i<notices.length ; i++){
+            result.push(
+            <div id = 'msg-section' key={i}>
+               <h3>{notices[i].time}</h3>
+               <p>{notices[i].msg}</p>
+            </div>
+            );  
+        }
+        return result;
+    };
+
+
     if(mode = 'setting-pin'){
         code = 
-        <div>
+        <div id={mode}>
             {/* 위험구역 모드 */}
                     {/* 모드 전환 버튼 */}
-                    <button>
-                        <img src="img/pin.png" alt='pin-img'/>
-                    </button>
-                    <button>
-                        <img src="img/notification_gray.png" alt='pin-img'/>
-                    </button>
+                    <div className="switch-button">
+                        <button id='on-color'>
+                            <img src="img/pin.png" alt='pin-img'/>
+                        </button>
+                        <button id='off-color'>
+                            <img src="img/notification_gray.png" alt='pin-img'/>
+                        </button>
+                    </div> 
+                    <div id="line"/>
                     {/* 목록 */}
-                    <h2>위험구역 목록</h2>
-                       {pin_list} 
+                    <div className="pin-list">
+                        <h2>위험구역 목록</h2>
+                        <div id="pin-list-section">
+                            {pin_list()}
+                        </div>
+                    </div>
+                    <div className="pin-set-button">
+                        <button id="add-pin">위치 추가</button>
+                        <button id='delete-pin'>위치 삭제</button>
+                    </div>
+                    
         </div>
     }   
+    if(mode = 'notification'){
+        code=
+        <div id={mode}>
+            {/* 알림창 */}
+                {/* 모드 전환 버튼 */}
+                <div className="switch-button">
+                        <button id='off-color'>
+                            <img src="img/pin_gray.png" alt='pin-img'/>
+                        </button>
+                        <button id='on-color'>
+                            <img src="img/notification.png" alt='pin-img'/>
+                        </button>
+                </div> 
+                <div id="line"/>
+                {/* 목록 */}
+                <div className="notification-list" >
+                <h2>알림 내역</h2>
+                    <div id="notification-list-inner">
+                    {notice_list()}
+                    </div>
+                </div>
+                
+
+        </div>
+    }
     else{
-        console.log('else');
+        console.log('잘못된 요청')
     }
     
     
