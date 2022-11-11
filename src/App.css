@@ -117,6 +117,7 @@
   border-radius: 0 0 25px 0 / 0 0 25px 0;
   border: solid #DEDEDE;
   border-width: 1px 1px 1px 0;
+  cursor: pointer;
 }
 
 #menu-mini-button>img{
@@ -147,6 +148,7 @@
 #setting-pin{
   height: 980px;
   position: relative;
+  width: 556px;
 }
 /* button */
 .switch-button{
@@ -157,27 +159,25 @@
   align-items: center;
   margin-bottom: 0px;
 }
-.switch-button>button{
+
+#on-color{
   border: none;
   outline: none;
   width: 239px;
   height: 160px;
-  cursor: pointer;                                            
-}
-
-.switch-button>button:first-child{
-  border-radius: 25px 0 0 25px;
-}
-.switch-button>button:last-child{
-  border-radius: 0 25px 25px 0;
-}
-
-#on-color{
+  cursor: pointer;      
   background-color: #4A67FF;
+  border-radius: 25px 0 0 25px;
 }
 
 #off-color{
+  border: none;
+  outline: none;
+  width: 239px;
+  height: 160px;
+  cursor: pointer;      
   background-color: #f3f3f3;
+  border-radius: 0 25px 25px 0;
 }
 
 /* pin-list */
@@ -211,6 +211,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 
 
@@ -263,7 +264,7 @@
   height: 677px;
   font-size: 20px;
   justify-content: center;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #msg-section{
@@ -271,5 +272,7 @@
   margin: 14px 38px;
   width: 476px;
   height: 185px;
+  text-align: center;
+  display: block;
 }
 

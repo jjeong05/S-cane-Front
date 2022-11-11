@@ -3,24 +3,24 @@ import Login from "./login";
 import Header from './header';
 import Map from "./map";
 import React, {useEffect} from 'react';
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Menu from './menu';
-
+import { BrowserRouter, BrowserRouter as Router, Link, Route } from "react-router-dom";
+import Pin from './pin';
+import Notification from './notice';
 
 
 
 function App() {
-  return (
-    <Route>
-      <div className="App">
-      {/* <Login/> */}
+  return (      
+    <div className="App">
+    <BrowserRouter>
         <Header/>
         <Map>
-          <Menu/>
+        <Route exact path='/' component={Pin} key='1'></Route>
+        <Route exact path='/notice' component={Notification} key='2'></Route>
+        <Notification></Notification>
         </Map>
-      </div>
-    </Route>
-    
+    </BrowserRouter>
+    </div>
   );
 }
 
