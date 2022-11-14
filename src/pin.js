@@ -9,10 +9,7 @@ function Pin(props){
         {title:'A'},
         {title:'B'},
         {title:'B'},
-        {title:'c'},
-        {title:'c'},
-        {title:'c'},
-        {title:'c'},
+        {title:'c'}
     ]
     const pin_list = ()=>{
         const result = [];

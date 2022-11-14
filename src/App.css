@@ -276,3 +276,62 @@
   display: block;
 }
 
+/* warning */
+#warning-container{
+  width: 850px;
+  height: 480px;
+  background-color: white;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: #C9C9C9 1px solid;
+  z-index: 1;
+
+}
+#warning-content{
+  width: 280px;
+  height: 335px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 66px;
+  left: 285px;
+  font-size: 20px;
+}
+
+#warning-content>button{
+  width: 280px;
+  height: 65px;
+  background-color: #4A67FF;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+#warning-content>h2{
+  font-size: 32px;
+  margin: 13px 0 6px 0;
+  color: #333;
+
+}
+
+#warning-content>p{
+  margin-bottom: 25px;
+  color: #a3a3a3;
+}
+
+#mini-line{
+  width: 254px;
+  height: 2px;
+  margin: 0;
+  background-color: #d9d9d9;
+}
+
+
+
