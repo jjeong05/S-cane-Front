@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Pin(props){
-    
+
     const pins =[
         {title:'GSM'},
         {title:'A'},
@@ -32,13 +32,13 @@ function Pin(props){
                     {/* 모드 전환 버튼 */}
                     <div className="switch-button">
                         <Link to='/'>
-                            <button id='on-color'>
-                                <img src="img/pin.png" alt='pin-img'/>
+                            <button id='pin-on-color'>
+                                <img id="pin" src="img/pin.png" alt='pin-img'/>
                             </button>
                         </Link>
                         <Link to='/notice'>
-                        <button id='off-color'>
-                            <img src="img/notification_gray.png" alt='pin-img'/>
+                        <button id='notice-off-color'>
+                            <img id="notification" src="img/notification_gray.png" alt='pin-img'/>
                         </button>
                         </Link>
                     </div> 

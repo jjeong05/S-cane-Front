@@ -18,8 +18,9 @@ function App() {
         <Header/>
         <Map>
         <Route exact path='/' component={Pin} key='1'></Route>
+        <Route exact path='/' component={Notification}></Route>
         </Map>
-        <Warning/>
+        {/* <Warning/> */}
     </BrowserRouter>
     </div>
   );

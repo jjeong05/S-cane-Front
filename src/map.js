@@ -1,6 +1,6 @@
 /* global kakao */
 import React, {useEffect} from "react";
-import Menu from "./pin";
+import Menu from "./notice";
 const { kakao } = window;
 
 
