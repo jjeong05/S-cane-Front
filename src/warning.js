@@ -6,12 +6,12 @@ function Warning(props) {
     const tracking_location = () =>{
        
     }
-    useEffect(()=>{
-        let timer = setTimeout(()=>{
-            props.setShow(false);
-        }, 2000);
-        return ()=>{clearTimeout(timer)}
-    }, []);
+    // useEffect(()=>{
+    //     let timer = setTimeout(()=>{
+    //         props.setShow(false);
+    //     }, 2000);
+    //     return ()=>{clearTimeout(timer)}
+    // }, []);
 
     return(
         <div id='warn-back'>

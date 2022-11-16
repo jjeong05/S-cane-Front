@@ -47,7 +47,7 @@ function Pin(props){
                     <div className="pin-list">
                         <h2>위험구역 목록</h2>
                         <div id="pin-list-section">
-                            {pin_list()}
+                            {()=>pin_list()}
                         </div>
                     </div>
                     <div className="pin-set-button">

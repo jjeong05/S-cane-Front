@@ -7,19 +7,19 @@ function Notification(props){
     let key = props.key;
 
     let notices =[
-        {time: '00:00:00', msg:'‘지다민’이(가) 위험 지정 구역 A에 접근했습니다.'},
-        {time: '11:11:11', msg:'‘지다민’의 지팡이가 떨어졌습니다.', case: 'fall'},
+        {time: '00:00:00', msg:'‘User’이(가) 위험 지정 구역 A에 접근했습니다.', case: 'access'},
+        {time: '11:11:11', msg:'‘User’의 지팡이가 떨어졌습니다.', case: 'fall'},
     ]
     
     const notice_list= ()=>{
         const result=[];
         for(let i = 0 ; i<notices.length ; i++){
             result.push(
-            <div id = 'msg-section' key={i}>
-               <h3>{notices[i].time}</h3>
-               <p>{notices[i].msg}</p>
-            </div>
-            );  
+                <div id = 'msg-section' key={i}>
+                   <h3>{notices[i].time}</h3>
+                   <p>{notices[i].msg}</p>
+                </div>
+            );    
         }
         console.log(key);
         return result;
@@ -32,15 +32,20 @@ function Notification(props){
 
     return (
         <div id="menu">
+            <div id="menu-section">
+            <div id="setting-pin">
+            {/* 모드 전환 버튼 */}
             <div className="switch-button">
                 <Link to='/'>
-                <button id='off-color'>
+                <button id='pin-off-color'>
                     <img src="img/pin_gray.png" alt='pin-img'/>
                 </button>
-                 </Link>
-                <button id='on-color'>
+                </Link>
+                <Link to='/notice'>
+                <button id='notice-on-color'>
                       <img src="img/notification.png" alt='pin-img'/>
                 </button>
+                </Link>
                 </div> 
                 <div id="line"/>
                 {/* 목록 */}
@@ -49,6 +54,8 @@ function Notification(props){
                     <div id="notification-list-inner">
                     {notice_list()}
                     </div>
+            </div>
+            </div>
             </div>
             <div id='menu-mini-button'>
                 <img src="img/mini-button.png" alt="mini-button"/>

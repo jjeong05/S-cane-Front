@@ -32,7 +32,7 @@ function App() {
         </Map>
 
         {setShock ? '숨김':'보임'}
-        {setShock && <Warning/>}
+        {  setShock && <Warning/>}
     </BrowserRouter>
     </div>
   );
