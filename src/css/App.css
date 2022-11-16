@@ -221,6 +221,7 @@
   grid-template-columns: 240px 240px;
   justify-content: center;
   place-items: center;
+  overflow: auto;
 }
 
 #pin-list-section>div{
@@ -239,10 +240,10 @@
 .pin-set-button{
   display: grid;
   grid-template-columns: 240px 240px;
-  
   justify-content: center;
   align-items: center;
   place-items: center;
+  
 }
 
 .pin-set-button>button{
@@ -253,6 +254,7 @@
   height: 65px;
   font-size: 24px;
   font-weight: lighter;
+  cursor: pointer;
 }
 
 #add-pin{
