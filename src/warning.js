@@ -3,16 +3,13 @@ import { Link } from "react-router-dom";
 
 
 function Warning(props) {
+    
+    
     const tracking_location = () =>{
-       
+        props.setShock(false); 
     }
-    // useEffect(()=>{
-    //     let timer = setTimeout(()=>{
-    //         props.setShow(false);
-    //     }, 2000);
-    //     return ()=>{clearTimeout(timer)}
-    // }, []);
-
+    useEffect(()=>{
+    }, []);
     return(
         <div id='warn-back'>
            <div id="warning-container">

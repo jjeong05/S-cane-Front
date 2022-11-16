@@ -13,6 +13,8 @@ import Warning from './warning';
 
 function App() {
   const [shock, setShock] = useState(false);
+  // const [warnAnimation, setWarnAnimation] = useState("warn-alert");
+
   useEffect(()=>{
     if(shock){
     setShock(true);
@@ -32,7 +34,7 @@ function App() {
         </Map>
 
         {setShock ? '숨김':'보임'}
-        {  setShock && <Warning/>}
+        {setShock && <Warning setShock={setShock}/>}
     </BrowserRouter>
     </div>
   );
