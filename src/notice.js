@@ -7,7 +7,7 @@ function Notification(props){
     let key = props.key;
 
     let notices =[
-        {time: '00:00:00', msg:'‘지다민’이(가) 위험 지정 구역 A에 접근했습니다.'},
+        {time: '00:00:00', msg:'‘지다민’이(가) 위험 지정 구역 A에 접근했습니다.', case: 'access'},
         {time: '11:11:11', msg:'‘지다민’의 지팡이가 떨어졌습니다.', case: 'fall'},
     ]
     
@@ -15,11 +15,11 @@ function Notification(props){
         const result=[];
         for(let i = 0 ; i<notices.length ; i++){
             result.push(
-            <div id = 'msg-section' key={i}>
-               <h3>{notices[i].time}</h3>
-               <p>{notices[i].msg}</p>
-            </div>
-            );  
+                <div id = 'msg-section' key={i}>
+                   <h3>{notices[i].time}</h3>
+                   <p>{notices[i].msg}</p>
+                </div>
+            );    
         }
         console.log(key);
         return result;
@@ -32,6 +32,8 @@ function Notification(props){
 
     return (
         <div id="menu">
+            <div id="menu-section">
+            <div id="setting-pin">
             <div className="switch-button">
                 <Link to='/'>
                 <button id='off-color'>
@@ -49,6 +51,8 @@ function Notification(props){
                     <div id="notification-list-inner">
                     {notice_list()}
                     </div>
+            </div>
+            </div>
             </div>
             <div id='menu-mini-button'>
                 <img src="img/mini-button.png" alt="mini-button"/>

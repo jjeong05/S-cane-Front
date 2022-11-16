@@ -258,10 +258,12 @@
   margin: 17px 0;
 }
 
+
 #notification-list-inner{
   background-color: #f3f3f3;
-  width: 556px;
-  height: 677px;
+  width: 478px;
+  height: 894px;
+  margin-left: 38px;
   font-size: 20px;
   justify-content: center;
   overflow: auto;
@@ -269,13 +271,12 @@
 
 #msg-section{
   background-color: white;
-  margin: 14px 38px;
+  margin-left: 1px;
   width: 476px;
   height: 185px;
   text-align: center;
   display: block;
 }
-
 /* warning */
 #warning-container{
   width: 850px;
