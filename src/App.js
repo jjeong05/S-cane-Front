@@ -1,4 +1,5 @@
-import './App.css';
+import './css/App.css';
+import './css/notice.css'
 import Login from "./login";
 import Header from './header';
 import Map from "./map";
@@ -17,8 +18,10 @@ function App() {
     
         <Header/>
         <Map>
-        <Route exact path='/' component={Pin} key='1'></Route>
-        <Route exact path='/' component={Notification}></Route>
+          <Router>
+            <Route exact path='/' component={Pin} key='1'></Route>
+            <Route exact path='notice' component={Notification}></Route>
+          </Router>
         </Map>
         {/* <Warning/> */}
     </BrowserRouter>
