@@ -1,7 +1,11 @@
 /* global kakao */
 import React, {useEffect} from "react";
-import Menu from "./pin";
+import {useLocation} from "react-router-dom";
+import Menu1 from "./pin";
+import Menu2 from "./notice";
 const { kakao } = window;
+
+
 
 
 function Map(){
@@ -19,12 +23,23 @@ function Map(){
         });
         marker.setMap(map);
     });
-    return (
+
+    const location = useLocation();
+    console.log(location);
+    if(location.pathname==="/"){
+        return (
+                <div id='map' style={{width:'100%', height:'980px'}}>
+                    <Menu1/>
+                </div>    
+        );
+    }
+    else if(location.pathname==="/notice"){
+        return (
             <div id='map' style={{width:'100%', height:'980px'}}>
-                <Menu/>
-            </div>
-        
-    );
+                <Menu2/>
+            </div>    
+        );
+    }
 }
 
 export default Map; 

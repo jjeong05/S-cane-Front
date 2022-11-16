@@ -1,5 +1,6 @@
 import './css/App.css';
 import './css/warning.css'
+import './css/notice.css'
 import Login from "./login";
 import Header from './header';
 import Map from "./map";
@@ -15,13 +16,13 @@ function App() {
   const [shock, setShock] = useState(false);
   // const [warnAnimation, setWarnAnimation] = useState("warn-alert");
 
-  useEffect(()=>{
-    if(shock){
-    setShock(true);
-    console.log("충격감지");
-    shock(false);
-    }
-  },[])
+  // useEffect(()=>{
+  //   if(shock){
+  //   setShock(true);
+  //   console.log("충격감지");
+  //   shock(false);
+  //   }
+  // },[])
   
 
   return (      
@@ -30,11 +31,14 @@ function App() {
     
         <Header/>
         <Map>
-        <Route exact path='/' component={Pin} key='1'></Route>
+          <Router>
+            <Route exact path='/' component={Pin} key='1'></Route>
+            <Route exact path='notice' component={Notification}></Route>
+          </Router>
         </Map>
 
-        {setShock ? '숨김':'보임'}
-        {setShock && <Warning setShock={setShock}/>}
+        {false && <Warning setShock={setShock}/>}
+
     </BrowserRouter>
     </div>
   );

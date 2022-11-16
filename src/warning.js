@@ -22,7 +22,6 @@ function Warning(props) {
             </div>  
         </div> 
         </div>
-        
     )
 }
 
