@@ -26,19 +26,26 @@
   }
 }
 
+@keyframes fadeOut{
+  from{
+    opacity: 1;
+  }
+  to{
+    opaciity: 0;
+  }
+}
+
 #warning-container {
-  animation: fadein 0.7s ease-in-out 0s 1 normal forwards;
+  animation: fadein 0.5s ease-in-out 0s 1 normal forwards;
 }
 
 .closeAnimation {
-  animation: slideOut 0.5s ease-in-out 0s 1 normal forwards;
+  animation: fadeout 0.5s ease-in-out 0s 1 normal forwards;
 }
 
 /* warning */
 #warn-back{
-  height: 100%;
-  width: 100%;
-  background-color: #333;
+  z-index: 999;
 }
 #warning-container{
     width: 850px;

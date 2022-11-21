@@ -222,6 +222,7 @@
   justify-content: center;
   place-items: center;
   overflow: auto;
+  scrollbar-width: none;
 }
 
 #pin-list-section>div{
@@ -229,10 +230,11 @@
   background-color: white;
   width: 232px;
   height: 180px;
+  margin: 10px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  overflow: auto;
+
 }
 
 

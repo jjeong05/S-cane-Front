@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 function Warning(props) {
 
     useEffect(()=>{
+       
     }, []);
 
     const tracking_location = () =>{
-        console.log(props.setShock);
-        return props.setShock(false); 
+        props.setModalOpen(false); 
+        
     } 
-
-    console.log(props)
     return(
         <div id='warn-back'>
            <div id="warning-container">
