@@ -1,14 +1,14 @@
 import './css/App.css';
 import './css/warning.css'
 import './css/notice.css'
-import Login from "./login";
-import Header from './header';
-import Map from "./map";
+import Login from "./components/login";
+import Header from './components/header';
+import Map from "./components/map";
 import React, {useEffect, useState} from 'react';
 import { BrowserRouter, BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Pin from './pin';
-import Notification from './notice';
-import Warning from './warning';
+import Pin from './components/pin';
+import Notification from './components/notice';
+import Danger from './pages/create_pin';
 
 
 
@@ -35,6 +35,8 @@ function App() {
           <Router>
             <Route exact path='/' component={Pin}></Route>
             <Route exact path='notice' component={Notification}></Route>
+            <Route exact path='danger' component={Danger}></Route>
+            
           </Router>
         </Map>
 

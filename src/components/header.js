@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import Warning
- from "./warning";
+ from "../warning";
 
  const msgList = [
     {title: '지팡이 충격 감지', script: '지팡이에 큰 충격이 감지되었습니다.', img:'img/Error outline.png'},

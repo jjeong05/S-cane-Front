@@ -40,6 +40,19 @@ function Map(){
             </div>    
         );
     }
+    else if(location.pathname==="/danger"){
+        return (
+            <div id='map' style={{width:'100%', height:'980px'}}>
+            </div>    
+        );
+    }
+    else if(location.pathname==="/danger/create"){
+        return (
+            <div id='map' style={{width:'100%', height:'980px'}}>
+            </div>    
+        );
+    }
+    
 
 
 
