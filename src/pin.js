@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 
 function Pin(props){
+    const[menuOpen, setMenuOpen] = useState(true);
+
 
     const pins =[
         {title:'GSM'},
@@ -27,7 +29,7 @@ function Pin(props){
     }; 
 
     return (
-        <div id="menu">
+        <div id={menuOpen ? 'menu' : 'menu-close'}>
             <div id='menu-section'>
             <div id="setting-pin">
             {/* 위험구역 모드 */}
@@ -60,8 +62,8 @@ function Pin(props){
                     </div>  
                 </div>
                 </div>
-                <div id='menu-mini-button'>
-                <img src="img/mini-button.png" alt="mini-button"/>
+                <div id='menu-mini-button' onClick={()=>{setMenuOpen(menuOpen => !menuOpen)}}>
+                <img src="img/mini-button.png" alt="mini-button" />
                 </div>
         </div>
     )

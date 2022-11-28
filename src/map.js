@@ -1,18 +1,42 @@
 /* global kakao */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Menu1 from "./pin";
 import Menu2 from "./notice";
 import Menu3 from "./danger";
-import Title from "./title";
+// import Title from "./title";
 import { markerdata } from "./markerData";
 const { kakao } = window;
 
 
 
+function Title(){
+    
+
+    return(
+        <div id='add-back'>
+           <div id="add-container">
+                <div id="add-content">
+                    <h2>위치 이름 설정</h2>
+                    <div id="mini-line"></div>            
+                    <p>추가할 위치의 이름을 입력해주세요</p>
+                    <input id="add-input" type="text" name="location"></input>
+                    <button onClick={()=>{
+
+
+                    }}>위치 추가</button>
+                </div>  
+            </div> 
+        </div>
+    )
+}
 
 function Map(){
     const location = useLocation();
+    const [modalOpen, setModalOpen] = useState(false);
+    const showModal = () =>{
+        setModalOpen(true);
+    }
 
     useEffect(()=>{
         const container = document.getElementById('map');
@@ -33,6 +57,7 @@ function Map(){
                 var lat = mouseEvent.latLng.getLat();
                 var lng = mouseEvent.latLng.getLng();
                 console.log(lat, lng);
+                console.log("뿡")
             });
         }
     });
@@ -52,9 +77,11 @@ function Map(){
     }
     if(location.pathname==="/danger"){
         return(
-            <div id='map' style={{width:'100%', height:'980px'}}>
+            <div id='map' onClick={()=>{showModal();}} style={{width:'100%', height:'980px'}}>
                 <Menu3/>
+                {modalOpen && <Title/>}
             </div>  
+            
         );
     }
 }

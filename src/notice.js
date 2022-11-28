@@ -1,9 +1,10 @@
 /* eslint-disable no-cond-assign */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Notification(props){
-    
+    const[menuOpen, setMenuOpen] = useState(true);
+
     let key = props.key;
 
     let notices =[
@@ -30,7 +31,7 @@ function Notification(props){
     });
 
     return (
-        <div id="menu">
+        <div id={menuOpen ? 'menu' : 'menu-close'}>
             <div id="menu-section">
             <div id="setting-pin">
             {/* 모드 전환 버튼 */}
@@ -56,8 +57,8 @@ function Notification(props){
             </div>
             </div>
             </div>
-            <div id='menu-mini-button'>
-                <img src="img/mini-button.png" alt="mini-button"/>
+            <div id='menu-mini-button' onClick={()=>{setMenuOpen(menuOpen => !menuOpen)}}>
+                <img src="img/mini-button.png" alt="mini-button" />
             </div>
         </div>
     )
