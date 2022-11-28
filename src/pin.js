@@ -1,6 +1,8 @@
 /* eslint-disable no-cond-assign */
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { scryRenderedDOMComponentsWithClass } from "react-dom/test-utils";
 import { Link } from "react-router-dom";
+
 
 function Pin(props){
 
@@ -36,7 +38,7 @@ function Pin(props){
                                 <img id="pin" src="img/pin.png" alt='pin-img'/>
                             </button>
                         </Link>
-                        <Link to='/notice'>
+                        <Link to='notice'>
                         <button id='notice-off-color'>
                             <img id="notification" src="img/notification_gray.png" alt='pin-img'/>
                         </button>
@@ -47,12 +49,14 @@ function Pin(props){
                     <div className="pin-list">
                         <h2>위험구역 목록</h2>
                         <div id="pin-list-section">
-                            {()=>pin_list()}
+                            {pin_list()}
                         </div>
                     </div>
                     <div className="pin-set-button">
-                        <button id="add-pin">위치 추가</button>
-                        <button id='delete-pin'>위치 삭제</button>
+                        <Link to='danger'>
+                            <button id="add-pin">위치 추가</button>
+                        </Link>
+                        <button id='delete-pin' onClick={()=>{}}>위치 삭제</button>
                     </div>  
                 </div>
                 </div>

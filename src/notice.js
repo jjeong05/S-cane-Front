@@ -29,7 +29,6 @@ function Notification(props){
         notice_list();
     });
 
-
     return (
         <div id="menu">
             <div id="menu-section">

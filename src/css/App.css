@@ -245,7 +245,7 @@
   place-items: center;
 }
 
-.pin-set-button>button{
+#add-pin{
   margin-top: 28px;
   border: none;
   outline: none;
@@ -253,46 +253,19 @@
   height: 65px;
   font-size: 24px;
   font-weight: lighter;
-}
-
-#add-pin{
   background-color: #4A67FF;
   color: white;
 }
 
 #delete-pin{
+  margin-top: 28px;
+  border: none;
+  outline: none;
+  width: 236px;
+  height: 65px;
+  font-size: 24px;
+  font-weight: lighter;
   background-color: white;
   border: 2px solid #f3f3f3;
   color: #A83C3C;
 }
-
-
-/* NOTIFICATION */
-.notification-list>h2{
-  width: 300px;
-  font-size: 24px;
-  position: relative;
-  left: 38px;
-  align-items: center;
-  justify-content: center;
-  margin: 17px 0;
-}
-
-#notification-list-inner{
-  background-color: #f3f3f3;
-  width: 556px;
-  height: 677px;
-  font-size: 20px;
-  justify-content: center;
-  overflow: auto;
-}
-
-#msg-section{
-  background-color: white;
-  margin: 14px 38px;
-  width: 476px;
-  height: 185px;
-  text-align: center;
-  display: block;
-}
-
