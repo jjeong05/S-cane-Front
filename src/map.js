@@ -13,7 +13,6 @@ const { kakao } = window;
 
 function Map(){
     const location = useLocation();
-    let onoff = false;
 
     useEffect(()=>{
         const container = document.getElementById('map');
@@ -33,8 +32,7 @@ function Map(){
             kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
                 var lat = mouseEvent.latLng.getLat();
                 var lng = mouseEvent.latLng.getLng();
-                onoff = true;
-                console.log(lat, lng, onoff);
+                console.log(lat, lng);
             });
         }
     });
@@ -53,21 +51,11 @@ function Map(){
         );
     }
     if(location.pathname==="/danger"){
-        console.log(onoff);
-        if(onoff === false){
-            return(
-                <div id='map' style={{width:'100%', height:'980px'}}>
-                    <Menu3/>
-                </div>  
-            );
-        }
-        if(onoff === true){
-            return(
-                <div id='map' style={{width:'100%', height:'980px'}}>
-                    <Title/>
-                </div>  
-            );
-        }
+        return(
+            <div id='map' style={{width:'100%', height:'980px'}}>
+                <Menu3/>
+            </div>  
+        );
     }
 }
 
