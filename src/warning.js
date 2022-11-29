@@ -19,7 +19,7 @@ function Warning(props) {
                 <h2>{props.msg[0].title}</h2>
                 {/* <div id="mini-line"></div>             */}
                 <p>{props.msg[0].script}</p>
-                <button onClick={()=>tracking_location()}>위치 확인</button>  
+                <button onClick={()=>tracking_location()}>확인</button>  
             </div>  
         </div> 
         </div>

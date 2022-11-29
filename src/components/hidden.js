@@ -13,14 +13,14 @@ function Pin(props){
         {title:'광주소프트웨어마이스터고등학교'},
         {title:'송정공원역'},
         {title:'광주공항'},
-        {title:'광주소프트웨어마이스터고등학교'}
-        
+        {title:'광주소프트웨어마이스터고등학교'},
+        {title:'뽀뽀통닭'}
     ]
     const pin_list = ()=>{
         const result = [];
         for(let i = 0 ; i<pins.length ; i++){
             result.push(
-            <div key={i} onClick={()=>{}}>
+            <div key={i}>
                {pins[i].title} 
             </div>
             );  

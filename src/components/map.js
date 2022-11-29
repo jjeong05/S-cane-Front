@@ -2,16 +2,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Menu1 from "./pin";
+import Hidden from "./hidden";
 import Menu2 from "./notice";
 import Menu3 from "../danger";
 // import Title from "./title";
 import { markerdata } from "../markerData";
 const { kakao } = window;
 
-
+var lat;
+var lng;
 
 function Title(){
-    
 
     return(
         <div id='add-back'>
@@ -21,11 +22,9 @@ function Title(){
                     <div id="mini-line"></div>            
                     <p>추가할 위치의 이름을 입력해주세요</p>
                        <input id="add-input" type="text" name="location"></input> 
-                       <button onClick={()=>{
-                        location.replace("http://localhost:8090/");
-
-                        }}>위치 추가</button>
-
+                       <Link to="pin">
+                       <button id="add-button">위치 추가</button>
+                       </Link>
                 </div>  
             </div> 
         </div>
@@ -39,13 +38,41 @@ function Map(){
         setModalOpen(true);
     }
 
+    const [Lat, setLat] = useState(null);
+    const [Lng, setLng] = useState(null);
+
+    function onGeoOk(position){
+        setLat(position.coords.latitude);
+        setLng(position.coords.longitude);
+    }
+
+    function onGeoError(){
+        alert("Can't find you");
+    }
+
+    const options = {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: Infinity,
+    };
+
+    navigator.geolocation.watchPosition(onGeoOk, onGeoError, options);
+
     useEffect(()=>{
         const container = document.getElementById('map');
         const options ={
-            center: new kakao.maps.LatLng(35.1427227828933,126.80069558224491),
+            center: new kakao.maps.LatLng(Lat, Lng),
             level:3
         };
         const map = new kakao.maps.Map(container, options); /* 맵 생성 */ 
+        
+        new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(Lat, Lng),
+            title: "현재 위치"
+        });
+        console.log(Lat, Lng);
+
         markerdata.forEach((data) => {
             new kakao.maps.Marker({
                 map: map,
@@ -53,15 +80,21 @@ function Map(){
                 title: data.title,
             });
         });
+
         if(location.pathname==="/danger"){
             kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-                var lat = mouseEvent.latLng.getLat();
-                var lng = mouseEvent.latLng.getLng();
+                lat = mouseEvent.latLng.getLat();
+                lng = mouseEvent.latLng.getLng();
                 console.log(lat, lng);
-                console.log("뿡")
             });
         }
-    });
+
+        new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(lat, lng),
+            title: "뽀뽀통닭"
+        });
+    }, [Lat, Lng]);
 
 
     if(location.pathname==="/"){
@@ -78,14 +111,20 @@ function Map(){
             </div>    
         );
     }
-    if(location.pathname==="/danger"){
+    else if(location.pathname==="/danger"){
             return(
                 <div id='map' onClick={()=>{showModal();}} style={{width:'100%', height:'980px'}}>
                     <Menu3/>
                     {modalOpen && <Title/>}
                 </div>  
-                
             );
+    }
+    else if(location.pathname==="/pin"){
+        return(
+            <div id='map' onClick={()=>{showModal();}} style={{width:'100%', height:'980px'}}>
+                <Hidden/>
+            </div>  
+        );
     }
     
 }

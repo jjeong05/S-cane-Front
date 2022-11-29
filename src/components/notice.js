@@ -8,8 +8,10 @@ function Notification(props){
     let key = props.key;
 
     let notices =[
-        {time: '00:00:00', msg:'‘User’이(가) 위험 지정 구역 A에 접근했습니다.', case: 'access'},
-        {time: '11:11:11', msg:'‘User’의 지팡이가 떨어졌습니다.', case: 'fall'},
+        
+        {time: '11/29    오후 7:13', msg:'‘User’의 지팡이에 큰 충격이 감지되었습니다.', case: 'fall'},
+        {time: '11/27    오후 4:03', msg:'‘User’의 지팡이에 큰 충격이 감지되었습니다.', case: 'fall'},
+        {time: '11/6     오전 9:00', msg:'‘User’이(가) 위험 지정 구역 송정공원역에 접근했습니다.', case: 'access'},
     ]
     
     const notice_list= ()=>{

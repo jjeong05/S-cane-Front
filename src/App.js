@@ -10,6 +10,8 @@ import React, {useEffect, useState} from 'react';
 import { BrowserRouter, BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Pin from './components/pin';
 import Notification from './components/notice';
+import Danger from './danger';
+import Hidden from './components/hidden';
 import Warning from './warning';
 
 
@@ -26,6 +28,8 @@ function App() {
           <Router>
             <Route exact path='/' component={Pin}></Route>
             <Route exact path='notice' component={Notification}></Route>
+            <Route exact path='danger' component={Danger}></Route>
+            <Route exact path='pin' component={Hidden}></Route>
           </Router>
         </Map>
 

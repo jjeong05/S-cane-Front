@@ -61,6 +61,19 @@
     transform: translate(-50%, 0);
     margin-bottom: 40px;
 }
+
+#add-button{
+    margin-top: 28px;
+    border: none;
+    outline: none;
+    width: 236px;
+    height: 65px;
+    font-size: 24px;
+    font-weight: lighter;
+    cursor: pointer;
+    background-color: #4A67FF;
+    color: white;
+}
    
 #mini-line{
     width: 254px;
