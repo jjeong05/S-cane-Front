@@ -10,12 +10,11 @@ function Pin(props){
 
     const pins =[
         {title:'GSM'},
-        {title:'A'},
-        {title:'B'},
-        {title:'C'},
-        {title:'C'},
-        {title:'C'},
-        {title:'C'}
+        {title:'광주소프트웨어마이스터고등학교'},
+        {title:'송정공원역'},
+        {title:'광주소프트웨어마이스터고등학교'},
+        {title:'광주소프트웨어마이스터고등학교'}
+        
     ]
     const pin_list = ()=>{
         const result = [];
