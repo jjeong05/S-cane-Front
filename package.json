@@ -15,7 +15,10 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack-dev-server": "^4.11.1",
+    "proxy":"http://146.56.185.33:8880/"
+
   },
   "scripts": {
     "start": "set PORT=8090 && react-scripts start",

@@ -26,6 +26,8 @@ function Map(){
 
     const location = useLocation();
     console.log(location);
+
+
     if(location.pathname==="/"){
         return (
                 <div id='map' style={{width:'100%', height:'980px'}}>
@@ -43,6 +45,19 @@ function Map(){
     else if(location.pathname==="/danger"){
         return (
             <div id='map' style={{width:'100%', height:'980px'}}>
+                {/* <Circle
+                    center={{
+                    lat: 33.450701,
+                    lng: 126.570667,
+                    }}
+                    radius={50}
+                    strokeWeight={5} // 선의 두께입니다
+                    strokeColor={"#75B8FA"} // 선의 색깔입니다
+                    strokeOpacity={2} // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                    strokeStyle={"dash"} // 선의 스타일 입니다
+                    fillColor={"#CFE7FF"} // 채우기 색깔입니다
+                    fillOpacity={0.7} // 채우기 불투명도 입니다
+                /> */}
             </div>    
         );
     }

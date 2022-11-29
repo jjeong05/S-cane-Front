@@ -17,15 +17,6 @@ import Danger from './pages/create_pin';
 function App() {
 
 
-  // useEffect(()=>{
-  //   if(shock){
-  //   setShock(true);
-  //   console.log("충격감지");
-  //   shock(false);
-  //   }
-  // },[])
-  
-
   return (      
     <div className="App">
     <BrowserRouter>

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Pin(props){
+    fetch('/').then((res)=>res.json()).then((data)=>console.log("뽕: "+data));
 
     const pins =[
         {title:'GSM'},
