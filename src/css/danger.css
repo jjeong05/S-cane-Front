@@ -1,0 +1,13 @@
+#marker-container{
+  position:absolute;
+  width: 850px;
+  height: 100px;
+  background-color: white;
+  color: #333;
+  left:50%;
+  transform: translate(-50%);
+  margin: auto;
+  text-align: center;
+  line-height: 100px;
+  z-index: 2;
+}

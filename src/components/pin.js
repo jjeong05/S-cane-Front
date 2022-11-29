@@ -1,8 +1,11 @@
 /* eslint-disable no-cond-assign */
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 function Pin(props){
+    const[menuOpen, setMenuOpen] = useState(true);
+
     fetch('/').then((res)=>res.json()).then((data)=>console.log("뽕: "+data));
 
     const pins =[
@@ -28,7 +31,7 @@ function Pin(props){
     }; 
 
     return (
-        <div id="menu">
+        <div id={menuOpen ? 'menu' : 'menu-close'}>
             <div id='menu-section'>
             <div id="setting-pin">
             {/* 위험구역 모드 */}
@@ -39,7 +42,7 @@ function Pin(props){
                                 <img id="pin" src="img/pin.png" alt='pin-img'/>
                             </button>
                         </Link>
-                        <Link to='/notice'>
+                        <Link to='notice'>
                         <button id='notice-off-color'>
                             <img id="notification" src="img/notification_gray.png" alt='pin-img'/>
                         </button>
@@ -50,17 +53,19 @@ function Pin(props){
                     <div className="pin-list">
                         <h2>위험구역 목록</h2>
                         <div id="pin-list-section">
-                            {pin_list()}
+                            {()=>pin_list()}
                         </div>
                     </div>
                     <div className="pin-set-button">
-                        <button id="add-pin">위치 추가</button>
-                        <button id='delete-pin'>위치 삭제</button>
+                        <Link to='danger'>
+                            <button id="add-pin">위치 추가</button>
+                        </Link>
+                        <button id='delete-pin' onClick={()=>{}}>위치 삭제</button>
                     </div>  
                 </div>
                 </div>
-                <div id='menu-mini-button'>
-                <img src="img/mini-button.png" alt="mini-button"/>
+                <div id='menu-mini-button' onClick={()=>{setMenuOpen(menuOpen => !menuOpen)}}>
+                <img src="img/mini-button.png" alt="mini-button" />
                 </div>
         </div>
     )
