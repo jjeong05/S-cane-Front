@@ -21,7 +21,7 @@ function Title(){
                     <h2>위치 이름 설정</h2>
                     <div id="mini-line"></div>            
                     <p>추가할 위치의 이름을 입력해주세요</p>
-                       <input id="add-input" type="text" name="location"></input> 
+                       <input id="add-input" type="text" name="location" autoComplete="off"></input> 
                        <Link to="pin">
                        <button id="add-button">위치 추가</button>
                        </Link>
@@ -50,13 +50,13 @@ function Map(){
         alert("Can't find you");
     }
 
-    const options = {
+    const option = {
         enableHighAccuracy: true,
         maximumAge: 0,
         timeout: Infinity,
     };
 
-    navigator.geolocation.watchPosition(onGeoOk, onGeoError, options);
+    navigator.geolocation.watchPosition(onGeoOk, onGeoError, option);
 
     useEffect(()=>{
         const container = document.getElementById('map');
@@ -71,7 +71,6 @@ function Map(){
             position: new kakao.maps.LatLng(Lat, Lng),
             title: "현재 위치"
         });
-        console.log(Lat, Lng);
 
         markerdata.forEach((data) => {
             new kakao.maps.Marker({
@@ -92,9 +91,9 @@ function Map(){
         new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(lat, lng),
-            title: "뽀뽀통닭"
+            title: "KDN 앞 사거리"
         });
-    }, [Lat, Lng]);
+    });
 
 
     if(location.pathname==="/"){

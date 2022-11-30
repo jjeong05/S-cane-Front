@@ -9,11 +9,11 @@ function Pin(props){
     fetch('/').then((res)=>res.json()).then((data)=>console.log("뽕: "+data));
 
     const pins =[
-        {title:'GSM'},
-        {title:'광주소프트웨어마이스터고등학교'},
-        {title:'송정공원역'},
-        {title:'광주공항'},
-        {title:'광주소프트웨어마이스터고등학교'}
+        {title:'축구장'},
+        {title:'공차'},
+        {title:'농구장'},
+        {title:'테니스장'},
+        {title:'KB국민은행'}
         
     ]
     const pin_list = ()=>{
