@@ -61,14 +61,14 @@ function Map(){
     useEffect(()=>{
         const container = document.getElementById('map');
         const options ={
-            center: new kakao.maps.LatLng(Lat, Lng),
+            center: new kakao.maps.LatLng(35.143196004191104, 126.80069991541106),
             level:3
         };
         const map = new kakao.maps.Map(container, options); /* 맵 생성 */ 
         
         new kakao.maps.Marker({
             map: map,
-            position: new kakao.maps.LatLng(Lat, Lng),
+            position: new kakao.maps.LatLng(35.143196004191104, 126.80069991541106),
             title: "현재 위치"
         });
 
